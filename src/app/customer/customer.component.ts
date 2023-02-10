@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import {HttpClient}
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })
-export class CustomerComponent {
+export class CustomerComponent implements OnInit{
 
 }
