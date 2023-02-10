@@ -1,0 +1,17 @@
+<h2>Cards</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Number</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let card of cards">
+      <td>{{ card.id }}</td>
+      <td>{{ card.number }}</td>
+      <td>{{ card.type }}</td>
+    </tr>
+  </tbody>
+</table>
