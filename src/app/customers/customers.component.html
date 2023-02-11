@@ -1,15 +1,15 @@
-<h5>Customers </h5>
-<table>
-    <thead>
+<h5 style="text-align: center; font-weight: bold;">Customers </h5>
+<table style="width: 100%; border-collapse: collapse;">
+    <thead style="background-color: #f2f2f2;">
         <tr>
-            <th>ID</th>
-            <th>Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">ID</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let customer of customers">
-            <td>{{customer.id}}</td>
-            <td>{{customer.name}}</td>
+        <tr *ngFor="let customer of customers" style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 10px;">{{customer.id}}</td>
+            <td style="padding: 10px;">{{customer.name}}</td>
         </tr>
     </tbody>
 </table>
