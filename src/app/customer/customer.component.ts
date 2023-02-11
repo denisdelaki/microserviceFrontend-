@@ -9,19 +9,32 @@ import {ActivatedRoute} from '@angular/router';
 export class CustomerComponent implements OnInit{
 customer: any;
 accounts: any;
+formData = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  address: '',
+};
 
 constructor (private http:  HttpClient, private route: ActivatedRoute){}
 ngOnInit(){
-  this.route.params.subscribe(params =>{
-    this.http.get(`http://localhost:3000/customers/${params['id']}.json`)
-    .subscribe(data=>{
-      this.customer =data;
-      this.http.get(`http://localhost:3000/customers/${params['id']}/accounts.json`).subscribe(data=>{
-        this.accounts =data;
-      })
+  // this.route.params.subscribe(params =>{
+  //   this.http.get(`http://localhost:3000/customers/${params['id']}.json`)
+  //   .subscribe(data=>{
+  //     this.customer =data;
+  //     this.http.get(`http://localhost:3000/customers/${params['id']}/accounts.json`).subscribe(data=>{
+  //       this.accounts =data;
+  //     })
 
-    })
-  })
+  //   })
+  // })
+}
+onSubmit(formData: { firstName: string, lastName: string, email: string, phone: string, address: string }) {
+  this.http.post('http://localhost:3000/customers', formData)
+    .subscribe(response => {
+      console.log(response);
+    });
 }
 topUp(account:  { id: number, balance: number }, amount: number) {
   let params = new HttpParams()

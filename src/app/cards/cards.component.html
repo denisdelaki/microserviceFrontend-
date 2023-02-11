@@ -1,4 +1,23 @@
-<h2>Cards</h2>
+<div>
+  <h5>Create a card for a Customer </h5>
+  <form #cardForm="ngForm" (ngSubmit)="createCard(cardForm)">
+    <div>
+      <label for="number">Account Number:</label>
+      <input type="text" id="number" name="number" ngModel>
+    </div>
+    <div>
+      <label for="type">Type:</label>
+      <select id="type" name="type" ngModel>
+        <option value="debit">Debit</option>
+        <option value="credit">Credit</option>
+      </select>
+    </div>
+    <button type="submit">Create Card</button>
+  </form>
+  
+</div>
+<div>
+<h5>Cards</h5>
 <table>
   <thead>
     <tr>
@@ -15,3 +34,4 @@
     </tr>
   </tbody>
 </table>
+</div>
